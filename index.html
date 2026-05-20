@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>REAL SENSI V22 ULTRA GOLD</title>
+
+<style>
+
+/* =========================
+   ROOT
+========================= */
+
+:root{
+
+--gold:#ffd700;
+--gold2:#ff9800;
+
+--red:#ff3b3b;
+--green:#00ff88;
+
+--bg:#050505;
+
+--text:#ffffff;
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,#2b1a00,#000000 70%);
+
+font-family:'Segoe UI',sans-serif;
+
+overflow-x:hidden;
+
+color:#fff;
+
+display:flex;
+justify-content:center;
+
+padding:20px;
+}
+
+/* =========================
+   PARTICULAS
+========================= */
+
+.stars{
+
+position:fixed;
+
+width:100%;
+height:100%;
+
+top:0;
+left:0;
+
+overflow:hidden;
+
+z-index:0;
+}
+
+.stars span{
+
+position:absolute;
+
+display:block;
+
+width:5px;
+height:5px;
+
+background:var(--gold);
+
+border-radius:50%;
+
+box-shadow:
+0 0 10px var(--gold),
+0 0 20px var(--gold2);
+
+animation:animate 8s linear infinite;
+}
+
+@keyframes animate{
+
+0%{
+
+transform:
+translateY(100vh)
+scale(0);
+
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+
+transform:
+translateY(-10vh)
+scale(1);
+
+opacity:0;
+}
+}
+
+/* =========================
+   ENTRADA
+========================= */
+
+.entry-screen{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+background:
+rgba(0,0,0,.96);
+
+z-index:5;
+}
+
+.logo{
+
+width:140px;
+height:140px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:55px;
+
+font-weight:900;
+
+background:
+linear-gradient(
+135deg,
+#ffd700,
+#ff9800
+);
+
+box-shadow:
+0 0 20px #ffd700,
+0 0 50px #ff9800;
+
+animation:pulse 2s infinite alternate;
+}
+
+@keyframes pulse{
+
+100%{
+transform:scale(1.08);
+}
+}
+
+.title{
+
+margin-top:30px;
+
+font-size:55px;
+
+font-weight:900;
+
+background:
+linear-gradient(
+180deg,
+#fff7b0,
+#ffd700,
+#ff9800
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 10px #ffd700,
+0 0 25px #ff9800;
+}
+
+.sub{
+
+margin-top:10px;
+
+font-size:14px;
+
+letter-spacing:4px;
+
+color:#ffe082;
+}
+
+.enter-btn{
+
+margin-top:50px;
+
+border:none;
+
+padding:22px 70px;
+
+border-radius:20px;
+
+font-size:28px;
+
+font-weight:900;
+
+cursor:pointer;
+
+color:#fff;
+
+background:
+linear-gradient(
+135deg,
+#ffd700,
+#ff9800
+);
+
+box-shadow:
+0 0 15px #ffd700,
+0 0 45px #ff9800;
+
+transition:.25s;
+}
+
+.enter-btn:hover{
+
+transform:scale(1.05);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+position:relative;
+
+z-index:2;
+
+width:100%;
+max-width:430px;
+
+background:
+rgba(10,10,10,.95);
+
+border:
+1px solid rgba(255,215,0,.15);
+
+border-radius:30px;
+
+padding:25px;
+
+display:none;
+
+box-shadow:
+0 0 20px rgba(255,215,0,.08),
+0 0 40px rgba(255,174,0,.05);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+text-align:center;
+
+margin-bottom:25px;
+}
+
+.header h1{
+
+font-size:42px;
+
+font-weight:900;
+
+background:
+linear-gradient(
+180deg,
+#fff7b0,
+#ffd700,
+#ff9800
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.header p{
+
+margin-top:8px;
+
+font-size:12px;
+
+letter-spacing:3px;
+
+color:#ffe082;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.field{
+
+margin-bottom:16px;
+}
+
+.field label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-size:12px;
+
+font-weight:700;
+
+color:#ffe082;
+}
+
+input,
+select{
+
+width:100%;
+
+padding:16px;
+
+border-radius:15px;
+
+border:
+1px solid rgba(255,215,0,.12);
+
+background:#101010;
+
+color:#fff;
+
+outline:none;
+
+font-size:14px;
+}
+
+input:focus,
+select:focus{
+
+border-color:var(--gold);
+
+box-shadow:
+0 0 10px rgba(255,215,0,.2);
+}
+
+/* =========================
+   BOTAO
+========================= */
+
+.btn{
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+border-radius:18px;
+
+font-size:16px;
+
+font-weight:900;
+
+cursor:pointer;
+
+color:#fff;
+
+background:
+linear-gradient(
+135deg,
+#ffd700,
+#ff9800
+);
+
+box-shadow:
+0 0 15px #ffd700,
+0 0 35px #ff9800;
+}
+
+/* =========================
+   LOADER ULTRA GOLD
+========================= */
+
+.loader{
+
+display:none;
+
+text-align:center;
+
+margin-top:35px;
+
+position:relative;
+
+overflow:hidden;
+}
+
+.loader::before{
+
+content:"";
+
+position:absolute;
+
+width:400px;
+height:400px;
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,0,.15),
+transparent 70%
+);
+
+filter:blur(20px);
+
+animation:
+pulseBg 2s infinite alternate;
+}
+
+@keyframes pulseBg{
+
+0%{
+transform:scale(1);
+opacity:.5;
+}
+
+100%{
+transform:scale(1.2);
+opacity:1;
+}
+}
+
+.scan-box{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+}
+
+.scan-circle{
+
+width:220px;
+height:220px;
+
+border-radius:50%;
+
+border:4px solid #ffd700;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+position:relative;
+
+box-shadow:
+0 0 15px #ffd700,
+0 0 40px #ff9800,
+inset 0 0 20px rgba(255,215,0,.3);
+
+animation:
+pulseScan 1.5s infinite alternate;
+}
+
+@keyframes pulseScan{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.04);
+}
+}
+
+.scan-circle::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+border-radius:50%;
+
+border:2px solid rgba(255,215,0,.5);
+
+animation:
+rotateScan 4s linear infinite;
+
+box-shadow:
+0 0 25px #ffd700,
+0 0 60px #ff9800;
+}
+
+@keyframes rotateScan{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+}
+
+.scan-circle::after{
+
+content:"";
+
+position:absolute;
+
+width:75%;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#ffd700,
+transparent
+);
+
+top:50%;
+
+left:12%;
+
+box-shadow:
+0 0 15px #ffd700,
+0 0 25px #ff9800;
+
+animation:
+scannerLine 2s infinite alternate;
+}
+
+@keyframes scannerLine{
+
+0%{
+transform:
+translateY(-70px);
+}
+
+100%{
+transform:
+translateY(70px);
+}
+}
+
+.scan-circle img{
+
+width:130px;
+height:130px;
+
+object-fit:contain;
+
+filter:
+brightness(1.5)
+contrast(1.3)
+drop-shadow(0 0 10px #ffd700)
+drop-shadow(0 0 25px #ffd700)
+drop-shadow(0 0 50px #ff9800)
+drop-shadow(0 0 80px #ffae00);
+
+animation:
+armaPulse .4s infinite alternate;
+}
+
+@keyframes armaPulse{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.08);
+}
+}
+
+.scan-percent{
+
+margin-top:20px;
+
+font-size:70px;
+
+font-weight:900;
+
+color:#ffd700;
+
+text-shadow:
+0 0 10px #ffd700,
+0 0 25px #ff9800;
+}
+
+.scan-line{
+
+width:220px;
+height:8px;
+
+margin-top:15px;
+
+border-radius:20px;
+
+background:#111;
+
+overflow:hidden;
+}
+
+.scan-fill{
+
+height:100%;
+width:0%;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+90deg,
+#ffd700,
+#ff9800
+);
+
+box-shadow:
+0 0 10px #ffd700,
+0 0 20px #ff9800;
+
+transition:.2s;
+}
+
+.scan-text{
+
+margin-top:18px;
+
+font-size:15px;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+color:#ffd700;
+
+text-shadow:
+0 0 10px #ffd700;
+}
+
+.scan-target{
+
+margin-top:10px;
+
+font-size:18px;
+
+font-weight:900;
+
+color:#fff;
+}
+
+/* =========================
+   RESULTADO
+========================= */
+
+.result{
+
+display:none;
+
+margin-top:25px;
+}
+
+.sensi-box{
+
+background:
+rgba(255,215,0,.03);
+
+border:
+1px solid rgba(255,215,0,.12);
+
+border-radius:25px;
+
+padding:22px;
+}
+
+.sensi-top{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+}
+
+.sensi-title{
+
+font-size:26px;
+
+font-weight:900;
+
+color:#ffd700;
+}
+
+.sensi-badge{
+
+padding:10px 16px;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:900;
+
+background:
+linear-gradient(
+135deg,
+#ffd700,
+#ff9800
+);
+}
+
+.sensi-item{
+
+margin-bottom:24px;
+}
+
+.sensi-info{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:10px;
+}
+
+.sensi-name{
+
+font-size:18px;
+
+font-weight:700;
+}
+
+.sensi-number{
+
+font-size:26px;
+
+font-weight:900;
+
+color:#ffd700;
+}
+
+.bar-area{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+}
+
+.sensi-bar{
+
+width:100%;
+
+height:18px;
+
+background:#181818;
+
+border-radius:20px;
+
+overflow:hidden;
+}
+
+.sensi-fill{
+
+height:100%;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+90deg,
+#ffd700,
+#ff9800
+);
+
+box-shadow:
+0 0 10px #ffd700,
+0 0 20px #ff9800;
+}
+
+.fire-box{
+
+margin-top:35px;
+
+padding:30px;
+
+border-radius:25px;
+
+text-align:center;
+
+border:
+1px solid rgba(255,215,0,.15);
+
+background:
+rgba(255,215,0,.03);
+}
+
+.fire-number{
+
+font-size:60px;
+
+font-weight:900;
+
+color:#ffd700;
+}
+
+.fire-text{
+
+margin-top:10px;
+
+font-size:16px;
+
+letter-spacing:2px;
+
+color:#ffe082;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars">
+
+<span style="left:10%;animation-duration:6s;"></span>
+<span style="left:20%;animation-duration:8s;"></span>
+<span style="left:35%;animation-duration:7s;"></span>
+<span style="left:50%;animation-duration:9s;"></span>
+<span style="left:65%;animation-duration:6s;"></span>
+<span style="left:80%;animation-duration:8s;"></span>
+<span style="left:90%;animation-duration:7s;"></span>
+
+</div>
+
+<!-- ENTRADA -->
+
+<div class="entry-screen">
+
+<div class="logo">
+RS
+</div>
+
+<div class="title">
+RealSensi
+</div>
+
+<div class="sub">
+GERADOR DE SENSIBILIDADE PRO
+</div>
+
+<button
+class="enter-btn"
+onclick="abrirPainel()"
+>
+⚡ ENTRAR
+</button>
+
+</div>
+
+<!-- CONTAINER -->
+
+<div class="container">
+
+<div class="header">
+
+<h1>
+REAL SENSI
+</h1>
+
+<p>
+ULTRA GOLD
+</p>
+
+</div>
+
+<div class="field">
+
+<label>MARCA</label>
+
+<input type="text" id="marca" placeholder="Samsung"/>
+
+</div>
+
+<div class="field">
+
+<label>MODELO</label>
+
+<input type="text" id="modelo" placeholder="Galaxy A54"/>
+
+</div>
+
+<button class="btn" onclick="processar()">
+GERAR SENSI
+</button>
+
+<!-- LOADER -->
+
+<div class="loader" id="loader">
+
+<div class="scan-box">
+
+<div class="scan-circle">
+
+<img id="armaImg" src="">
+
+</div>
+
+<div
+class="scan-percent"
+id="scanPercent"
+>
+0%
+</div>
+
+<div class="scan-line">
+
+<div
+class="scan-fill"
+id="scanFill"
+></div>
+
+</div>
+
+<div class="scan-text">
+ESCANEANDO GEOMETRIA...
+</div>
+
+<div
+class="scan-target"
+id="armaNome"
+>
+TARGET : A10
+</div>
+
+</div>
+
+</div>
+
+<!-- RESULTADO -->
+
+<div class="result" id="result">
+
+<div id="cards"></div>
+
+</div>
+
+</div>
+
+<script>
+
+/* =========================
+   ARMAS FF
+========================= */
+
+const armasFF=[
+
+{
+nome:"M1014 EVO",
+img:"https://freefiremobile-a.akamaihd.net/common/web_event/hash/ffwebsite/images/weapons/m1014.png"
+},
+
+{
+nome:"MP40 PREDADORA",
+img:"https://freefiremobile-a.akamaihd.net/common/web_event/hash/ffwebsite/images/weapons/mp40.png"
+},
+
+{
+nome:"AK DRAGÃO",
+img:"https://freefiremobile-a.akamaihd.net/common/web_event/hash/ffwebsite/images/weapons/ak.png"
+},
+
+{
+nome:"UMP BOOYAH",
+img:"https://freefiremobile-a.akamaihd.net/common/web_event/hash/ffwebsite/images/weapons/ump.png"
+},
+
+{
+nome:"SCAR TITAN",
+img:"https://freefiremobile-a.akamaihd.net/common/web_event/hash/ffwebsite/images/weapons/scar.png"
+},
+
+{
+nome:"M1887 ONE PUNCH",
+img:"https://freefiremobile-a.akamaihd.net/common/web_event/hash/ffwebsite/images/weapons/m1887.png"
+}
+
+];
+
+function abrirPainel(){
+
+document.querySelector(".entry-screen")
+.style.display="none";
+
+document.querySelector(".container")
+.style.display="block";
+}
+
+function processar(){
+
+document.getElementById("loader")
+.style.display="block";
+
+document.getElementById("result")
+.style.display="none";
+
+const armaImg=
+document.getElementById("armaImg");
+
+const armaNome=
+document.getElementById("armaNome");
+
+const scanPercent=
+document.getElementById("scanPercent");
+
+const scanFill=
+document.getElementById("scanFill");
+
+let percent=0;
+
+let trocaArma=
+setInterval(()=>{
+
+const arma=
+armasFF[
+Math.floor(
+Math.random()*armasFF.length
+)
+];
+
+armaImg.src=arma.img;
+
+armaNome.innerText=
+"TARGET : "+arma.nome;
+
+},180);
+
+let scan=
+setInterval(()=>{
+
+percent+=4;
+
+if(percent>100){
+
+percent=100;
+}
+
+scanPercent.innerText=
+percent+"%";
+
+scanFill.style.width=
+percent+"%";
+
+},100);
+
+setTimeout(()=>{
+
+clearInterval(trocaArma);
+
+clearInterval(scan);
+
+document.getElementById("loader")
+.style.display="none";
+
+gerar();
+
+},2600);
+
+}
+
+function criarBarra(nome,valor){
+
+if(valor>200){
+valor=200;
+}
+
+return`
+
+<div class="sensi-item">
+
+<div class="sensi-info">
+
+<div class="sensi-name">
+${nome}
+</div>
+
+<div class="sensi-number">
+${valor}
+</div>
+
+</div>
+
+<div class="bar-area">
+
+<div class="sensi-bar">
+
+<div
+class="sensi-fill"
+style="width:${valor}%"
+></div>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+}
+
+function gerar(){
+
+const sensi={
+
+geral:200,
+red:195,
+mira2:180,
+mira4:165,
+awm:145,
+livre:130,
+botao:52
+
+};
+
+document.getElementById("cards")
+.innerHTML=
+
+`
+
+<div class="sensi-box">
+
+<div class="sensi-top">
+
+<div class="sensi-title">
+GERADOR DE SENSI
+</div>
+
+<div class="sensi-badge">
+⚡ ULTRA
+</div>
+
+</div>
+
+${criarBarra("Geral",sensi.geral)}
+
+${criarBarra("Ponto Vermelho",sensi.red)}
+
+${criarBarra("Mira 2X",sensi.mira2)}
+
+${criarBarra("Mira 4X",sensi.mira4)}
+
+${criarBarra("AWM",sensi.awm)}
+
+${criarBarra("Olhadinha",sensi.livre)}
+
+<div class="fire-box">
+
+<div class="fire-number">
+${sensi.botao}
+</div>
+
+<div class="fire-text">
+TAMANHO DO BOTÃO
+</div>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("result")
+.style.display="block";
+}
+
+</script>
+
+</body>
+  </html>
